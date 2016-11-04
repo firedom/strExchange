@@ -14,5 +14,6 @@ def replaceFoldername(dir):
 if __name__ == '__main__':
     if len(sys.argv) <= 1:
         print('target not found.')
-    replaceFoldername(sys.argv[0])
+        sys.exit(0)
+    replaceFoldername(sys.argv[1])
 
