@@ -1,7 +1,7 @@
-import os
+import os, sys
 
-def replaceFoldername():
-	fileName = os.listdir()
+def replaceFoldername(dir):
+	fileName = os.listdir(dir)
 	for i in range(0, len(fileName)):
 		print(fileName[i])
 		if fileName[i].find(' ') > 0 :
@@ -12,4 +12,7 @@ def replaceFoldername():
 			os.rename(fileName[i], output)
 
 if __name__ == '__main__':
-    replaceFoldername()
+    if len(sys.argv) <= 1:
+        print('target not found.')
+    replaceFoldername(sys.argv[0])
+
